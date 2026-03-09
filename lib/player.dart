@@ -1,16 +1,17 @@
-import 'package:flame/components.dart';
 import 'package:flutter/material.dart';
 
-class Player extends CircleComponent {
-  Player({
-    required super.position,
-    required double radius,
-    Color color = Colors.white,
-  }) : super(
-          anchor: Anchor.center,
-          radius: radius,
-          paint: Paint()
-            ..color = color 
-            ..style = PaintingStyle.fill,
-        );
+class Player extends StatelessWidget {
+  final circleY;
+
+  Player({this.circleY});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      alignment: Alignment(0, circleY),
+      child: Image.asset(
+          'lib/images/player.png',
+          width: 50,
+        ),);
+  }
 }
